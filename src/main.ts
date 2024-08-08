@@ -158,7 +158,6 @@ const reasignaPacientesAMedicoFamilia = (
 
         console.log(nuevoArrayDePacientes);
     }
-    // Tu implementación aquí :)
   };
 
 
@@ -178,7 +177,7 @@ const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
 
   console.log(HayPacientesDePediatria(pacientes));
 
-  /*
+  
   // APARTADO 5
   // Queremos calcular el número total de pacientes que están asignados a la especialidad de *Medico de familia*, y lo que están asignados a *Pediatría* y a *cardiología*.
 
@@ -191,6 +190,27 @@ const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
   const cuentaPacientesPorEspecialidad = (
     pacientes: Pacientes[]
   ): NumeroPacientesPorEspecialidad => {
-    // Tu implementación aquí :)
+    
+    const conteo: NumeroPacientesPorEspecialidad = {
+      medicoDeFamilia: 0,
+      pediatria: 0,
+      cardiologia: 0
+    };
+
+    for (const paciente of pacientes) {
+      switch (paciente.especialidad) {
+        case "Medico de familia":
+          conteo.medicoDeFamilia++;
+          break;
+        case "Pediatra":
+          conteo.pediatria++;
+          break;
+        case "Cardiólogo":
+          conteo.cardiologia++;
+          break;
+      }
+    }
+  
+    return conteo;
   };
-  */
+  
