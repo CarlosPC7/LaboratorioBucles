@@ -135,30 +135,17 @@ const reasignaPacientesAMedicoFamilia = (
     pacientes: Pacientes[]
   ): Pacientes[] => {
 
-    let indiceDePacientes = -1;
+    const copiaPacientes = [...pacientes];
 
-    for (let i = 0; i < pacientes.length; i++) {
-        if (pacientes[i].especialidad === "Pediatra") {
-            indiceDePacientes = i;
-            break;
+    for (let i = 0; i < copiaPacientes.length; i++) {
+        if (copiaPacientes[i].especialidad === "Pediatra") {
+            copiaPacientes[i].especialidad = "Medico de familia";
             }
         }
-
-    if (indiceDePacientes !== -1) {
-        const pacientesModificado = {
-            ...pacientes[indiceDePacientes],
-            especialidad: "Medico de familia",
-        };
-
-        const nuevoArrayDePacientes = [
-            ...pacientes.slice(0, indiceDePacientes),
-            pacientesModificado,
-            ...pacientes.slice(indiceDePacientes + 1)
-        ];
-
-        console.log(nuevoArrayDePacientes);
-    }
+    return copiaPacientes;
   };
+
+  
 
 
 // APARTADO 4
