@@ -95,7 +95,7 @@ const obtenPacientesAsignadosAPediatria = (
 
 // b) Queremos extraer la lista de pacientes asignados a Pediatría y que tengan una edad menor de 10 años.
 
-const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAños = (
     pacientes: Pacientes[]
   ): Pacientes[] => {
     let pacientesPediatra: Pacientes[] = [];
@@ -106,6 +106,8 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
             }
             return pacientesPediatra;
   };
+
+  console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAños(pacientes));
 
 
 // APARTADO 2
@@ -145,7 +147,8 @@ const reasignaPacientesAMedicoFamilia = (
     return copiaPacientes;
   };
 
-  
+  console.log(reasignaPacientesAMedicoFamilia(pacientes));
+
 
 
 // APARTADO 4
@@ -201,3 +204,4 @@ const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     return conteo;
   };
   
+  console.log(cuentaPacientesPorEspecialidad(pacientes));
